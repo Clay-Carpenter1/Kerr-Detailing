@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "api/send-reminder.js": {
+      "runtime": "nodejs18.x"
+    },
+    "api/check-reminders.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/check-reminders",
+      "schedule": "0 18 * * *"
+    }
+  ]
+}

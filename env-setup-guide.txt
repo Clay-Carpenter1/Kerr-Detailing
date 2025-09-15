@@ -1,0 +1,22 @@
+# Environment Variables Setup Guide
+
+## Local Development (.env file):
+VITE_SUPABASE_URL=your_supabase_url_here
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
+TWILIO_ACCOUNT_SID=your_twilio_account_sid_here
+TWILIO_AUTH_TOKEN=your_twilio_auth_token_here
+TWILIO_PHONE_NUMBER=+1234567890
+VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
+
+## Vercel Deployment:
+1. Go to Vercel Dashboard → Your Project → Settings → Environment Variables
+2. Add each variable above with your actual values
+3. Make sure to set them for Production, Preview, and Development environments
+
+## Getting Twilio Credentials:
+1. Sign up at https://twilio.com
+2. Go to Console Dashboard
+3. Find your Account SID and Auth Token
+4. Buy a phone number (or use trial number)
+5. Add these to your environment variables

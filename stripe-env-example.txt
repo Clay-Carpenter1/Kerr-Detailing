@@ -1,0 +1,11 @@
+# Create a .env file in your project root with these exact variable names:
+
+# Stripe Keys (Frontend - Safe to expose)
+VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
+
+# Stripe Keys (Backend - Keep private, not used in current frontend-only setup)
+STRIPE_SECRET_KEY=sk_test_your_secret_key_here
+
+# Supabase Keys (if not already set)
+VITE_SUPABASE_URL=your_supabase_url_here
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
