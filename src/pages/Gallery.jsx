@@ -12,7 +12,7 @@ const GalleryPage = () => {
   const galleryImages = [
     {
       id: 1,
-      src: '/images/gallery1.jpg',
+      src: '/gallery1.jpg',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -115,7 +115,7 @@ const GalleryPage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/images/darkened_overlay_stronger.png')`
+            backgroundImage: `url('/darkened_overlay_stronger.png')`
           }}
         ></div>
         
