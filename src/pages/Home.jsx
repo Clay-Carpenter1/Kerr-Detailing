@@ -89,10 +89,7 @@ const Home = () => {
       <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
-          }}
+          className="absolute inset-0 bg-red-500"
         ></div>
         
         {/* Overlay for better text readability */}
