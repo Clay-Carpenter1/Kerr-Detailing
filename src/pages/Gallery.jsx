@@ -12,6 +12,14 @@ const GalleryPage = () => {
   const galleryImages = [
     {
       id: 1,
+      src: '/gallery1.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 2,
       src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Luxury car exterior detail',
       category: 'Exterior',
@@ -19,7 +27,7 @@ const GalleryPage = () => {
       description: 'Complete paint correction and ceramic coating'
     },
     {
-      id: 2,
+      id: 3,
       src: 'https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Car interior cleaning',
       category: 'Interior',
@@ -27,7 +35,7 @@ const GalleryPage = () => {
       description: 'Professional leather conditioning and fabric protection'
     },
     {
-      id: 3,
+      id: 4,
       src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Paint correction work',
       category: 'Paint Correction',
@@ -35,7 +43,7 @@ const GalleryPage = () => {
       description: 'Swirl mark removal and paint enhancement'
     },
     {
-      id: 4,
+      id: 5,
       src: 'https://images.unsplash.com/photo-1494905998402-395d579af36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Engine bay cleaning',
       category: 'Engine Bay',
@@ -43,7 +51,7 @@ const GalleryPage = () => {
       description: 'Thorough engine compartment cleaning'
     },
     {
-      id: 5,
+      id: 6,
       src: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Ceramic coating application',
       category: 'Ceramic Coating',
@@ -51,7 +59,7 @@ const GalleryPage = () => {
       description: 'Long-lasting paint protection application'
     },
     {
-      id: 6,
+      id: 7,
       src: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Wheel and tire detail',
       category: 'Wheels',
@@ -59,7 +67,7 @@ const GalleryPage = () => {
       description: 'Professional wheel cleaning and protection'
     },
     {
-      id: 7,
+      id: 8,
       src: 'https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Complete car transformation',
       category: 'Full Detail',
@@ -67,7 +75,7 @@ const GalleryPage = () => {
       description: 'Full service detail package results'
     },
     {
-      id: 8,
+      id: 9,
       src: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Headlight restoration',
       category: 'Restoration',

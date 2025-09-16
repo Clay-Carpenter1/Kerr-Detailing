@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "@vercel/node@2.15.10"
-    }
-  },
   "crons": [
     {
       "path": "/api/check-reminders",
