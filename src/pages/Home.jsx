@@ -92,10 +92,6 @@ const Home = () => {
           className="absolute inset-0 bg-red-500"
         ></div>
         
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-slate-900/30"></div>
-        
         <div className="relative z-10 text-center px-4">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 drop-shadow-2xl" style={{textShadow: '4px 4px 8px rgba(0,0,0,0.8), 2px 2px 4px rgba(0,0,0,0.9)'}}>
             Welcome to 
