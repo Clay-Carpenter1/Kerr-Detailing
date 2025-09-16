@@ -91,7 +91,7 @@ const Home = () => {
         <div 
           className="absolute inset-0"
           style={{
-            backgroundImage: `url('/darkened_overlay_stronger.png')`,
+            backgroundImage: `url('/test-image.svg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
