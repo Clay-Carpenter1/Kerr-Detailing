@@ -86,16 +86,15 @@ const Home = () => {
 
   return (
     <div>
-      <div className="min-h-screen relative flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#ef4444' }}>
+      <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0"
           style={{
-            backgroundImage: `url('/test-image.svg')`,
+            backgroundImage: `url('/darkened_overlay_stronger.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: '#ef4444'
+            backgroundRepeat: 'no-repeat'
           }}
         ></div>
         
