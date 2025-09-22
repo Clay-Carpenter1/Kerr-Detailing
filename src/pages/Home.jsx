@@ -108,8 +108,7 @@ const Home = () => {
             <span className="text-primary block drop-shadow-2xl font-black" style={{textShadow: '4px 4px 8px rgba(0,0,0,0.8), 2px 2px 4px rgba(0,0,0,0.9)'}}>Kerr Detailing</span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-xl" style={{textShadow: '3px 3px 6px rgba(0,0,0,0.8), 1px 1px 3px rgba(0,0,0,0.9)'}}>
-            Professional car detailing services that transform your vehicle into a masterpiece. 
-            Experience the difference with our premium care and attention to detail.
+          Central Arkansas detailing service. We take care of every car like it’s our own, making sure every detail shines.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button 
@@ -157,9 +156,7 @@ const Home = () => {
             >
               {/* Before Image */}
               <div className="relative">
-                <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
-                  BEFORE
-                </div>
+                
                 <img
                   src={beforeAfterImages[currentBeforeAfter].before}
                   alt="Before detailing"
@@ -169,9 +166,7 @@ const Home = () => {
 
               {/* After Image */}
               <div className="relative">
-                <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
-                  AFTER
-                </div>
+                
                 <img
                   src={beforeAfterImages[currentBeforeAfter].after}
                   alt="After detailing"

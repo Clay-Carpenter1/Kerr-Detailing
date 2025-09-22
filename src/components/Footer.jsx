@@ -12,7 +12,7 @@ const Footer = () => {
               <span className="font-bold text-xl">Kerr Detailing</span>
             </div>
             <p className="text-muted-foreground">
-              Professional car detailing services that transform your vehicle into a masterpiece.
+            Central Arkansas detailing service. We take care of every car like it’s our own, making sure every detail shines.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />

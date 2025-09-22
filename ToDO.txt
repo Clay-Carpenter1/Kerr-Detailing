@@ -1,0 +1,106 @@
+Header:
+
+Change the logo to updated detailing logo
+
+Footer:
+
+Fix quick links to correct endpoints
+
+Contact Page:
+
+Isaac will make a KerrDetailing email
+
+Hours:
+Monday-Wednesday
+7:00 AM - 6:00 PM
+
+Home Page:
+
+Slogan:
+
+Central Arkansas detailing service. We take care of every car like it’s our own, making sure every detail shines.
+
+Transformations:
+
+Instead of transformations, just show detail package pictures
+- i.e. interior, exterior, etc.
+
+Reviews:
+
+Change the reviews to real reviews when Isaac creates a MyGoogle account.
+
+Booking Modal:
+
+No SMS reminders, Isaac will do that accordingly.
+
+Services Package:
+
+Choose the perfect package for your vehicle's needs. All packages include our satisfaction guarantee.(Delete)
+
+Premium: ($149)
+Exterior
+ 	Foam Wash & Hand Wash
+ 	Wheel Decontamination
+ 	Tire Dressing
+	Bug/Tar Removal
+	Paint Enhancement
+Interior
+	Interior Decontamination
+ 	Vacuum
+	Fabric Shampoo
+	Leather Conditioning
+	Window Cleaning
+
+Diamond: ($199)
+Exterior
+ 	Foam Wash & Hand Wash
+ 	Wheel Decontamination
+ 	Tire Dressing
+ 	Bug/Tar Removal
+ 	Clay Bar
+	Engine Bay Cleaning
+	Headlight Restoration (Optional)
+	Paint Enhancement
+Interior
+ 	Interior Decontamination
+ 	Vacuum
+ 	Fabric Shampoo
+ 	Interior Steam
+ 	Leather Conditioning
+ 	Window Cleaning
+	Trim Enhancement
+	Odor Elimination
+
+
+Individual Services:
+
+Paint Correction change to Buff/Wax
+
+Exterior Detail: (65$)
+Interior Detail: (85$)
+Buff/Wax       : ($99)
+Ceramic Coating: Delete
+
+Add Ons:
+Good
+
+Change Expert Technicians
+Get rid of "100%" on quality
+
+
+Bookings Page:
+
+Good
+
+Gallery Page:
+
+Pictures Good
+
+Take 500+ cars ... etc. card out
+
+About Page:
+
+Isaac will make a story
+
+Take out 24/7 support
+

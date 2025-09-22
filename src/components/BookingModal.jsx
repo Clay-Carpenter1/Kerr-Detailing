@@ -111,26 +111,25 @@ const BookingModal = ({ isOpen, onClose }) => {
 
   // Service packages with addons
   const servicePackages = [
-    {
-      id: 'basic',
-      name: 'Basic Package',
-      price: 89,
-      description: 'Perfect for regular maintenance',
-      features: [
-        'Exterior wash & dry',
-        'Wheel cleaning',
-        'Interior vacuum',
-        'Dashboard wipe down',
-        'Window cleaning'
-      ]
-    },
+    // {
+    //   id: 'basic',
+    //   name: 'Basic Package',
+    //   price: 89,
+    //   description: 'Perfect for regular maintenance',
+    //   features: [
+    //     'Exterior wash & dry',
+    //     'Wheel cleaning',
+    //     'Interior vacuum',
+    //     'Dashboard wipe down',
+    //     'Window cleaning'
+    //   ]
+    // },
     {
       id: 'premium',
       name: 'Premium Package',
       price: 149,
       description: 'Our most popular package',
       features: [
-        'Everything in Basic',
         'Clay bar treatment',
         'Paint polishing',
         'Leather conditioning',
@@ -140,8 +139,8 @@ const BookingModal = ({ isOpen, onClose }) => {
       popular: true
     },
     {
-      id: 'elite',
-      name: 'Elite Package',
+      id: 'diamond',
+      name: 'Diamond Package',
       price: 249,
       description: 'The ultimate detailing experience',
       features: [
@@ -476,7 +475,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                   />
                 </div>
 
-                {/* Text Message Opt-in */}
+                {/* Text Message Opt-in
                 <div className="flex items-start space-x-3 p-4 bg-muted/30 rounded-md border border-border">
                   <input
                     type="checkbox"
@@ -493,7 +492,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                       Standard message rates may apply.
                     </p>
                   </label>
-                </div>
+                </div> */}
                 
                 
                 <div className="grid grid-cols-1 gap-4">

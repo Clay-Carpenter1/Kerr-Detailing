@@ -7,9 +7,8 @@ const BookingDetailsModal = ({ isOpen, onClose, booking }) => {
 
   const formatService = (service) => {
     const serviceNames = {
-      basic: 'Basic Package',
       premium: 'Premium Package',
-      elite: 'Elite Package',
+      diamond: 'Diamond Package',
       exterior: 'Exterior Detail',
       interior: 'Interior Clean',
       paint_correction: 'Paint Correction',
@@ -21,9 +20,8 @@ const BookingDetailsModal = ({ isOpen, onClose, booking }) => {
 
   const getServicePrice = (service) => {
     const servicePrices = {
-      basic: 89,
       premium: 149,
-      elite: 249,
+      diamond: 249,
       exterior: 75,
       interior: 65,
       paint_correction: 200,

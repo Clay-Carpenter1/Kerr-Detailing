@@ -72,9 +72,8 @@ const Bookings = () => {
 
   const formatService = (service, totalPrice) => {
     const serviceNames = {
-      basic: 'Basic Package',
       premium: 'Premium Package',
-      elite: 'Elite Package',
+      diamond: 'Diamond Package',
       exterior: 'Exterior Detail',
       interior: 'Interior Clean',
       paint_correction: 'Paint Correction',

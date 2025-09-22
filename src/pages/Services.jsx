@@ -9,29 +9,28 @@ const ServicesPage = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   const servicePackages = [
-    {
-      name: 'Basic',
-      price: '$89',
-      description: 'Perfect for regular maintenance',
-      duration: '2-3 hours',
-      features: [
-        'Exterior wash & dry',
-        'Wheel cleaning',
-        'Interior vacuum',
-        'Dashboard wipe down',
-        'Window cleaning',
-        'Tire dressing'
-      ],
-      popular: false,
-      color: 'from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20'
-    },
+    // {
+    //   name: 'Basic',
+    //   price: '$89',
+    //   description: 'Perfect for regular maintenance',
+    //   duration: '2-3 hours',
+    //   features: [
+    //     'Exterior wash & dry',
+    //     'Wheel cleaning',
+    //     'Interior vacuum',
+    //     'Dashboard wipe down',
+    //     'Window cleaning',
+    //     'Tire dressing'
+    //   ],
+    //   popular: false,
+    //   color: 'from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20'
+    // },
     {
       name: 'Premium',
       price: '$149',
       description: 'Our most popular package',
       duration: '3-4 hours',
       features: [
-        'Everything in Basic',
         'Clay bar treatment',
         'Paint polishing',
         'Leather conditioning',
@@ -43,7 +42,7 @@ const ServicesPage = () => {
       color: 'from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20'
     },
     {
-      name: 'Elite',
+      name: 'Diamond',
       price: '$249',
       description: 'The ultimate detailing experience',
       duration: '4-6 hours',
@@ -149,7 +148,7 @@ const ServicesPage = () => {
           >
             <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white drop-shadow-2xl" style={{textShadow: '3px 3px 6px rgba(0,0,0,0.8)'}}>Our Services</h1>
             <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed drop-shadow-lg" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
-            Choose the perfect package for your vehicle's needs. All packages include our satisfaction guarantee.
+            Choose the perfect package for your vehicle's needs.
             </p>
           </motion.div>
         </div>

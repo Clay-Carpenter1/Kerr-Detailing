@@ -9,25 +9,24 @@ const Pricing = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   const packages = [
-    {
-      name: 'Basic',
-      price: '$89',
-      description: 'Perfect for regular maintenance',
-      features: [
-        'Exterior wash & dry',
-        'Wheel cleaning',
-        'Interior vacuum',
-        'Dashboard wipe down',
-        'Window cleaning'
-      ],
-      popular: false
-    },
+    // {
+    //   name: 'Basic',
+    //   price: '$89',
+    //   description: 'Perfect for regular maintenance',
+    //   features: [
+    //     'Exterior wash & dry',
+    //     'Wheel cleaning',
+    //     'Interior vacuum',
+    //     'Dashboard wipe down',
+    //     'Window cleaning'
+    //   ],
+    //   popular: false
+    // },
     {
       name: 'Premium',
       price: '$149',
       description: 'Our most popular package',
       features: [
-        'Everything in Basic',
         'Clay bar treatment',
         'Paint polishing',
         'Leather conditioning',
@@ -37,7 +36,7 @@ const Pricing = () => {
       popular: true
     },
     {
-      name: 'Elite',
+      name: 'Diamond',
       price: '$249',
       description: 'The ultimate detailing experience',
       features: [
