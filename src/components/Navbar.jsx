@@ -32,9 +32,12 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
-              <Car className="h-8 w-8 text-primary" />
-              <span className="font-bold text-xl">Kerr Detailing</span>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/Logo_1.PNG" 
+                alt="Kerr Detailing" 
+                className="h-28 w-32"
+              />
             </Link>
 
             {/* Desktop Navigation */}

@@ -7,12 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Car className="h-8 w-8 text-primary" />
-              <span className="font-bold text-xl">Kerr Detailing</span>
-            </div>
+            <h3 className="font-semibold text-xl">Kerr Detailing</h3>
             <p className="text-muted-foreground">
-            Central Arkansas detailing service. We take care of every car like it’s our own, making sure every detail shines.
+            Central Arkansas detailing service. We take care of every car like it's our own, making sure every detail shines.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -69,6 +66,13 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border/40 mt-8 pt-8 text-center text-muted-foreground">
+          {/* <div className="flex justify-center mb-2">
+            <img 
+              src="/Logo_1.PNG" 
+              alt="Kerr Detailing" 
+              className="h-20 w-auto"
+            />
+          </div> */}
           <p>&copy; 2024 Kerr Detailing. All rights reserved.</p>
         </div>
       </div>

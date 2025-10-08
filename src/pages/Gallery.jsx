@@ -20,6 +20,22 @@ const GalleryPage = () => {
     },
     {
       id: 2,
+      src: '/gallery2.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 3,
+      src: '/gallery3.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 4,
       src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Luxury car exterior detail',
       category: 'Exterior',
@@ -27,23 +43,23 @@ const GalleryPage = () => {
       description: 'Complete paint correction and ceramic coating'
     },
     {
-      id: 3,
-      src: 'https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Car interior cleaning',
-      category: 'Interior',
-      title: 'Deep Interior Clean',
-      description: 'Professional leather conditioning and fabric protection'
-    },
-    {
-      id: 4,
-      src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Paint correction work',
-      category: 'Paint Correction',
-      title: 'Paint Restoration',
-      description: 'Swirl mark removal and paint enhancement'
-    },
-    {
       id: 5,
+      src: '/gallery4.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 6,
+      src: '/gallery5.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 7,
       src: 'https://images.unsplash.com/photo-1494905998402-395d579af36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       alt: 'Engine bay cleaning',
       category: 'Engine Bay',
@@ -51,28 +67,20 @@ const GalleryPage = () => {
       description: 'Thorough engine compartment cleaning'
     },
     {
-      id: 6,
-      src: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Ceramic coating application',
-      category: 'Ceramic Coating',
-      title: 'Ceramic Protection',
-      description: 'Long-lasting paint protection application'
-    },
-    {
-      id: 7,
-      src: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Wheel and tire detail',
-      category: 'Wheels',
-      title: 'Wheel Restoration',
-      description: 'Professional wheel cleaning and protection'
-    },
-    {
       id: 8,
-      src: 'https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Complete car transformation',
-      category: 'Full Detail',
-      title: 'Complete Transformation',
-      description: 'Full service detail package results'
+      src: '/gallery6.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 9,
+      src: '/gallery7.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
     }
   ];
 
