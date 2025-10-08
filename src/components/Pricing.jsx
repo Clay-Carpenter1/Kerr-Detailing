@@ -23,31 +23,46 @@ const Pricing = () => {
     //   popular: false
     // },
     {
-      name: 'Premium',
-      price: '$149',
+      id: 'premium',
+      name: 'Premium Package',
+      price: 149,
       description: 'Our most popular package',
       features: [
-        'Clay bar treatment',
-        'Paint polishing',
-        'Leather conditioning',
-        'Tire shine application',
-        'Interior deep clean'
+        'Foam Wash & Hand Wash',
+        'Wheel Decontamination',
+        'Tire Dressing',
+        'Bug/Tar Removal',
+        'Paint Enhancement',
+        'Interior Decontamination',
+        'Vacuum',
+        'Fabric Shampoo',
+        'Leather Conditioning',
+        'Window Cleaning'
       ],
       popular: true
     },
     {
-      name: 'Diamond',
-      price: '$249',
+      id: 'diamond',
+      name: 'Diamond Package',
+      price: 199,
       description: 'The ultimate detailing experience',
       features: [
-        'Everything in Premium',
-        'Paint correction',
-        'Ceramic coating application',
-        'Engine bay cleaning',
-        'Headlight restoration',
-        'Paint protection warranty'
-      ],
-      popular: false
+        'Foam Wash & Hand Wash',
+        'Wheel Decontamination',
+        'Tire Dressing',
+        'Bug/Tar Removal',
+        'Clay Bar',
+        'Engine Bay Cleaning',
+        'Headlight Restoration',
+        'Paint Enhancement',
+        'Interior Decontamination',
+        'Vacuum',
+        'Fabric Shampoo',
+        'Leather Conditioning',
+        'Window Cleaning',
+        'Trim Enhancement',
+        'Odor Elimination'
+      ]
     }
   ];
 

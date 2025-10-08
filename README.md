@@ -152,9 +152,8 @@ api/                     # Serverless functions
 
 ## 📱 **Service Packages**
 
-- **Basic Package** ($89) - Essential cleaning and maintenance
 - **Premium Package** ($149) - Comprehensive detailing with protection
-- **Elite Package** ($249) - Ultimate detailing with ceramic coating
+- **Diamond Package** ($249) - Ultimate detailing with ceramic coating
 
 ### **Available Add-ons**
 - Engine Bay Cleaning (+$35)

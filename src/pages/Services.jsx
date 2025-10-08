@@ -26,37 +26,46 @@ const ServicesPage = () => {
     //   color: 'from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20'
     // },
     {
-      name: 'Premium',
-      price: '$149',
+      id: 'premium',
+      name: 'Premium Package',
+      price: 149,
       description: 'Our most popular package',
-      duration: '3-4 hours',
       features: [
-        'Clay bar treatment',
-        'Paint polishing',
-        'Leather conditioning',
-        'Interior deep clean',
-        'Engine bay wipe down',
-        'Chrome polishing'
+        'Foam Wash & Hand Wash',
+        'Wheel Decontamination',
+        'Tire Dressing',
+        'Bug/Tar Removal',
+        'Paint Enhancement',
+        'Interior Decontamination',
+        'Vacuum',
+        'Fabric Shampoo',
+        'Leather Conditioning',
+        'Window Cleaning'
       ],
-      popular: true,
-      color: 'from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20'
+      popular: true
     },
     {
-      name: 'Diamond',
-      price: '$249',
+      id: 'diamond',
+      name: 'Diamond Package',
+      price: 199,
       description: 'The ultimate detailing experience',
-      duration: '4-6 hours',
       features: [
-        'Everything in Premium',
-        'Paint correction',
-        'Ceramic coating application',
-        'Engine bay cleaning',
-        'Headlight restoration',
-        'Paint protection warranty',
-        'Premium interior protection'
-      ],
-      popular: false,
-      color: 'from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20'
+        'Foam Wash & Hand Wash',
+        'Wheel Decontamination',
+        'Tire Dressing',
+        'Bug/Tar Removal',
+        'Clay Bar',
+        'Engine Bay Cleaning',
+        'Headlight Restoration',
+        'Paint Enhancement',
+        'Interior Decontamination',
+        'Vacuum',
+        'Fabric Shampoo',
+        'Leather Conditioning',
+        'Window Cleaning',
+        'Trim Enhancement',
+        'Odor Elimination'
+      ]
     }
   ];
 
@@ -166,7 +175,7 @@ const ServicesPage = () => {
           >
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {servicePackages.map((pkg, index) => (
               <motion.div
                 key={pkg.name}
@@ -177,10 +186,10 @@ const ServicesPage = () => {
                 className="relative"
               >
                 {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold flex items-center">
-                      <Star className="h-4 w-4 mr-1" />
-                      Most Popular
+                  <div className="absolute -top-2 left-0 z-10">
+                    <div className="bg-primary text-primary-foreground px-2 py-0.5 rounded-full text-xs font-medium flex items-center">
+                      <Star className="h-2.5 w-2.5 mr-0.5" />
+                      Popular
                     </div>
                   </div>
                 )}

@@ -130,26 +130,40 @@ const BookingModal = ({ isOpen, onClose }) => {
       price: 149,
       description: 'Our most popular package',
       features: [
-        'Clay bar treatment',
-        'Paint polishing',
-        'Leather conditioning',
-        'Tire shine application',
-        'Interior deep clean'
+        'Foam Wash & Hand Wash',
+        'Wheel Decontamination',
+        'Tire Dressing',
+        'Bug/Tar Removal',
+        'Paint Enhancement',
+        'Interior Decontamination',
+        'Vacuum',
+        'Fabric Shampoo',
+        'Leather Conditioning',
+        'Window Cleaning'
       ],
       popular: true
     },
     {
       id: 'diamond',
       name: 'Diamond Package',
-      price: 249,
+      price: 199,
       description: 'The ultimate detailing experience',
       features: [
-        'Everything in Premium',
-        'Paint correction',
-        'Ceramic coating application',
-        'Engine bay cleaning',
-        'Headlight restoration',
-        'Paint protection warranty'
+        'Foam Wash & Hand Wash',
+        'Wheel Decontamination',
+        'Tire Dressing',
+        'Bug/Tar Removal',
+        'Clay Bar',
+        'Engine Bay Cleaning',
+        'Headlight Restoration',
+        'Paint Enhancement',
+        'Interior Decontamination',
+        'Vacuum',
+        'Fabric Shampoo',
+        'Leather Conditioning',
+        'Window Cleaning',
+        'Trim Enhancement',
+        'Odor Elimination'
       ]
     }
   ];

@@ -1,4 +1,4 @@
-import { Car, Facebook, Instagram, Twitter, Truck, Phone, Mail } from 'lucide-react';
+import { Car, Instagram, Truck, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -15,9 +15,14 @@ const Footer = () => {
             Central Arkansas detailing service. We take care of every car like it’s our own, making sure every detail shines.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-              <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-              <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+              <a 
+                href="https://www.instagram.com/kerrdetailing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
             </div>
           </div>
 

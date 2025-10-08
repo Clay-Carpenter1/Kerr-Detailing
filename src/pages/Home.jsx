@@ -22,7 +22,7 @@ const Home = () => {
       before: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       after: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       title: 'Full Detail Package',
-      description: 'Complete exterior and interior transformation'
+      description: 'Complete exterior and interior restoration'
     },
     {
       id: 2,
@@ -55,7 +55,7 @@ const Home = () => {
       name: 'Mike Rodriguez',
       rating: 5,
       text: 'Best car detailing service in town! They transformed my old truck into something that looks like it just rolled off the lot.',
-      service: 'Elite Package',
+      service: 'Diamond Package',
       date: '1 month ago'
     },
     {
@@ -132,16 +132,20 @@ const Home = () => {
       {/* Before/After Gallery Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Package Title */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">See the Transformation</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Witness the incredible results of our professional detailing services
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+              {beforeAfterImages[currentBeforeAfter].title}
+            </h2>
+            <p className="text-xl text-muted-foreground mt-4">
+              {beforeAfterImages[currentBeforeAfter].description}
             </p>
           </motion.div>
 
@@ -152,38 +156,29 @@ const Home = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-4xl mx-auto"
             >
               {/* Before Image */}
               <div className="relative">
-                
                 <img
                   src={beforeAfterImages[currentBeforeAfter].before}
                   alt="Before detailing"
-                  className="w-full h-80 object-cover rounded-lg shadow-xl"
+                  className="w-full h-64 object-cover rounded-lg shadow-xl"
                 />
               </div>
 
               {/* After Image */}
               <div className="relative">
-                
                 <img
                   src={beforeAfterImages[currentBeforeAfter].after}
                   alt="After detailing"
-                  className="w-full h-80 object-cover rounded-lg shadow-xl"
+                  className="w-full h-64 object-cover rounded-lg shadow-xl"
                 />
               </div>
             </motion.div>
 
-            {/* Gallery Info */}
+            {/* Navigation Section */}
             <div className="text-center mt-8">
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                {beforeAfterImages[currentBeforeAfter].title}
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                {beforeAfterImages[currentBeforeAfter].description}
-              </p>
-
               {/* Navigation Buttons */}
               <div className="flex justify-center items-center space-x-4">
                 <Button

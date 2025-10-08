@@ -73,14 +73,6 @@ const GalleryPage = () => {
       category: 'Full Detail',
       title: 'Complete Transformation',
       description: 'Full service detail package results'
-    },
-    {
-      id: 9,
-      src: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Headlight restoration',
-      category: 'Restoration',
-      title: 'Headlight Clarity',
-      description: 'Restored headlight transparency'
     }
   ];
 
@@ -205,14 +197,14 @@ const GalleryPage = () => {
           {selectedImage && (
             <div className="relative">
               {/* Close Button */}
-              <Button
+              {/* <Button
                 variant="ghost"
                 size="icon"
                 onClick={closeLightbox}
                 className="absolute top-4 right-4 z-20 bg-black/50 text-white hover:bg-black/70"
               >
                 <X className="h-4 w-4" />
-              </Button>
+              </Button> */}
 
               {/* Navigation Buttons */}
               {filteredImages.length > 1 && (
