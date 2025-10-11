@@ -19,24 +19,24 @@ const Home = () => {
   const beforeAfterImages = [
     {
       id: 1,
-      before: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      before: '/gallery2.jpg',
+      after: '/gallery5.jpg',
       title: 'Full Detail Package',
       description: 'Complete exterior and interior restoration'
     },
     {
-      id: 2,
-      before: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Paint Correction',
-      description: 'Restored paint clarity and shine'
-    },
-    {
       id: 3,
-      before: 'https://images.unsplash.com/photo-1494905998402-395d579af36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      before: '/gallery10.jpg',
+      after: '/gallery11.jpg',
       title: 'Interior Deep Clean',
       description: 'Professional interior restoration'
+    },
+    {
+      id: 2,
+      before: '/paint-correction3.jpeg',
+      after: '/paint-correction4.png',
+      title: 'Paint Correction',
+      description: 'Restored paint clarity and shine'
     }
   ];
 
@@ -172,7 +172,10 @@ const Home = () => {
                 <img
                   src={beforeAfterImages[currentBeforeAfter].after}
                   alt="After detailing"
-                  className="w-full h-64 object-cover rounded-lg shadow-xl"
+                  className={`w-full h-64 object-cover rounded-lg shadow-xl ${
+                    currentBeforeAfter === 0 ? 'object-center' : 'object-center'
+                  }`}
+                  style={currentBeforeAfter === 0 ? { objectPosition: 'center 85%' } : {}}
                 />
               </div>
             </motion.div>

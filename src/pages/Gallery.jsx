@@ -81,6 +81,79 @@ const GalleryPage = () => {
       category: 'Featured',
       title: 'Professional Detail Work',
       description: 'Quality detailing service results'
+    },
+    {
+      id: 10,
+      src: '/gallery8.JPG',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 11,
+      src: '/gallery9.JPG',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 12,
+      src: '/galleryvid1.MOV',
+      alt: 'Professional car detailing video',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results',
+      isVideo: true
+    },
+    {
+      id: 13,
+      src: '/gallery10.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 14,
+      src: '/gallery11.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 15,
+      src: '/gallery12.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 16,
+      src: '/gallery13.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 17,
+      src: '/gallery14.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
+    },
+    {
+      id: 18,
+      src: '/gallery15.jpg',
+      alt: 'Professional car detailing work',
+      category: 'Featured',
+      title: 'Professional Detail Work',
+      description: 'Quality detailing service results'
     }
   ];
 
@@ -155,11 +228,21 @@ const GalleryPage = () => {
                 onClick={() => openLightbox(image, index)}
               >
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
+                  {image.isVideo ? (
+                    <video
+                      src={image.src}
+                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  )}
                   
                   {/* Overlay on Hover */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
@@ -236,12 +319,23 @@ const GalleryPage = () => {
                 </>
               )}
 
-              {/* Image */}
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.alt}
-                className="w-full h-auto max-h-[80vh] object-contain"
-              />
+              {/* Image or Video */}
+              {selectedImage.isVideo ? (
+                <video
+                  src={selectedImage.src}
+                  className="w-full h-auto max-h-[80vh] object-contain"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                />
+              ) : (
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="w-full h-auto max-h-[80vh] object-contain"
+                />
+              )}
 
               {/* Image Info */}
               <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-white p-4">

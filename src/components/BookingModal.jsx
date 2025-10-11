@@ -7,6 +7,7 @@ import { getAvailableTimeSlots } from '../lib/bookingUtils';
 import { supabase } from '../lib/supabase';
 import CarInfoModal from './CarInfoModal';
 import PaymentModal from './PaymentModal';
+import emailjs from '@emailjs/browser';
 
 const BookingModal = ({ isOpen, onClose }) => {
   const { user } = useAuth();
@@ -287,6 +288,64 @@ const BookingModal = ({ isOpen, onClose }) => {
     setShowServiceSelection(false);
   };
 
+  const sendBookingEmail = async (bookingData, paymentResult) => {
+    try {
+      // Get service name
+      const serviceName = servicePackages.find(pkg => pkg.id === bookingData.service)?.name || bookingData.service;
+      
+      // Get addon names
+      const selectedAddons = addons.filter(addon => bookingData.addons.includes(addon.id));
+      const addonsList = selectedAddons.length > 0 
+        ? selectedAddons.map(addon => `${addon.name} (+$${addon.price})`).join('\n')
+        : 'None';
+
+      // Format booking date and time
+      const bookingDateTime = new Date(`${bookingData.date}T${bookingData.time}`);
+      const formattedDate = bookingDateTime.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      const formattedTime = bookingDateTime.toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+
+      // Email template parameters
+      const templateParams = {
+        customer_name: bookingData.name,
+        customer_email: bookingData.email,
+        customer_phone: bookingData.phone,
+        service_name: serviceName,
+        booking_date: formattedDate,
+        booking_time: formattedTime,
+        car_info: `${carInfo.carYear} ${carInfo.carMake} ${carInfo.carModel} (${carInfo.carColor})`,
+        car_condition: carInfo.carCondition,
+        addons: addonsList,
+        total_price: `$${bookingData.totalPrice}`,
+        special_requests: bookingData.message || 'None',
+        text_reminders: bookingData.textReminders ? 'Yes' : 'No',
+        payment_status: paymentResult?.status || 'Completed',
+        to_email: 'kerrdetailin9@gmail.com'
+      };
+
+      // Send email using EmailJS (you'll need to set up the service and template)
+      await emailjs.send(
+        'service_kerr_detailing', // Service ID - needs to be created in EmailJS
+        'template_booking_confirmation', // Template ID - needs to be created in EmailJS
+        templateParams,
+        'YOUR_PUBLIC_KEY' // Public key - needs to be replaced with actual key
+      );
+
+      console.log('Booking confirmation email sent successfully');
+    } catch (error) {
+      console.error('Error sending booking email:', error);
+      // Don't throw error to avoid disrupting the booking process
+    }
+  };
+
   const completeBookingAfterPayment = async (paymentResult) => {
     setLoading(true);
     setError('');
@@ -325,6 +384,10 @@ const BookingModal = ({ isOpen, onClose }) => {
       if (error) throw error;
 
       console.log('Complete booking saved:', data);
+      
+      // Send booking confirmation email
+      await sendBookingEmail(formData, paymentResult);
+      
       setPaymentData(paymentResult);
       setShowPayment(false);
       setSuccess(true);

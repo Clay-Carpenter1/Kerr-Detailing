@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,8 +20,28 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
+    
+    // Create email content
+    const subject = `New Contact Form Message from ${formData.name}`;
+    const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+
+Message:
+${formData.message}
+
+---
+This message was sent from the Kerr Detailing website contact form.
+    `;
+    
+    // Create Gmail web compose link
+    const gmailLink = `https://mail.google.com/mail/?view=cm&to=kerrdetailin9@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open Gmail in new tab
+    window.open(gmailLink, '_blank');
+    
+    // Reset form
     setFormData({
       name: '',
       email: '',
@@ -43,7 +64,7 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: 'Email',
-      details: 'info@kerrdetailing.com'
+      details: 'kerrdetailin9@gmail.com'
     },
     {
       icon: <Clock className="h-6 w-6 text-primary" />,
