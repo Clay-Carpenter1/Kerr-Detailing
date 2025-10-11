@@ -164,6 +164,7 @@ const Home = () => {
                   src={beforeAfterImages[currentBeforeAfter].before}
                   alt="Before detailing"
                   className="w-full h-64 object-cover rounded-lg shadow-xl"
+                  loading="lazy"
                 />
               </div>
 
@@ -176,6 +177,7 @@ const Home = () => {
                     currentBeforeAfter === 0 ? 'object-center' : 'object-center'
                   }`}
                   style={currentBeforeAfter === 0 ? { objectPosition: 'center 85%' } : {}}
+                  loading="lazy"
                 />
               </div>
             </motion.div>
