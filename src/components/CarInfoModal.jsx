@@ -77,14 +77,14 @@ const CarInfoModal = ({ isOpen, onClose, bookingData, onBack, onNext }) => {
             )}
 
             <div className="grid grid-cols-1 gap-4">
-              <div className="relative">
-                <Car className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <div className="flex items-center space-x-3 border border-input rounded-md px-3 py-3 bg-background focus-within:ring-2 focus-within:ring-ring">
+                <Car className="h-4 w-4 text-muted-foreground flex-shrink-0" />
                 <select
                   name="carMake"
                   value={carInfo.carMake}
                   onChange={handleInputChange}
                   required
-                  className="w-full pl-10 pr-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+                  className="flex-1 bg-transparent focus:outline-none text-sm"
                 >
                   <option value="">Select Car Make *</option>
                   {carMakes.map(make => (
@@ -93,8 +93,8 @@ const CarInfoModal = ({ isOpen, onClose, bookingData, onBack, onNext }) => {
                 </select>
               </div>
               
-              <div className="relative">
-                <Car className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <div className="flex items-center space-x-3 border border-input rounded-md px-3 py-3 bg-background focus-within:ring-2 focus-within:ring-ring">
+                <Car className="h-4 w-4 text-muted-foreground flex-shrink-0" />
                 <input
                   type="text"
                   name="carModel"
@@ -102,18 +102,18 @@ const CarInfoModal = ({ isOpen, onClose, bookingData, onBack, onNext }) => {
                   value={carInfo.carModel}
                   onChange={handleInputChange}
                   required
-                  className="w-full pl-10 pr-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+                  className="flex-1 bg-transparent focus:outline-none text-sm"
                 />
               </div>
               
-              <div className="relative">
-                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <div className="flex items-center space-x-3 border border-input rounded-md px-3 py-3 bg-background focus-within:ring-2 focus-within:ring-ring">
+                <Calendar className="h-4 w-4 text-muted-foreground flex-shrink-0" />
                 <select
                   name="carYear"
                   value={carInfo.carYear}
                   onChange={handleInputChange}
                   required
-                  className="w-full pl-10 pr-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+                  className="flex-1 bg-transparent focus:outline-none text-sm"
                 >
                   <option value="">Select Year *</option>
                   {years.map(year => (
@@ -122,15 +122,15 @@ const CarInfoModal = ({ isOpen, onClose, bookingData, onBack, onNext }) => {
                 </select>
               </div>
               
-              <div className="relative">
-                <Palette className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <div className="flex items-center space-x-3 border border-input rounded-md px-3 py-3 bg-background focus-within:ring-2 focus-within:ring-ring">
+                <Palette className="h-4 w-4 text-muted-foreground flex-shrink-0" />
                 <input
                   type="text"
                   name="carColor"
                   placeholder="Car Color (optional)"
                   value={carInfo.carColor}
                   onChange={handleInputChange}
-                  className="w-full pl-10 pr-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+                  className="flex-1 bg-transparent focus:outline-none text-sm"
                 />
               </div>
               
