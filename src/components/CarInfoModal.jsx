@@ -78,13 +78,13 @@ const CarInfoModal = ({ isOpen, onClose, bookingData, onBack, onNext }) => {
 
             <div className="grid grid-cols-1 gap-4">
               <div className="relative">
-                <Car className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Car className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <select
                   name="carMake"
                   value={carInfo.carMake}
                   onChange={handleInputChange}
                   required
-                  className="w-full pl-10 pr-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="w-full pl-10 pr-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring text-sm"
                 >
                   <option value="">Select Car Make *</option>
                   {carMakes.map(make => (
@@ -94,7 +94,7 @@ const CarInfoModal = ({ isOpen, onClose, bookingData, onBack, onNext }) => {
               </div>
               
               <div className="relative">
-                <Car className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Car className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <input
                   type="text"
                   name="carModel"
@@ -102,18 +102,18 @@ const CarInfoModal = ({ isOpen, onClose, bookingData, onBack, onNext }) => {
                   value={carInfo.carModel}
                   onChange={handleInputChange}
                   required
-                  className="w-full pl-10 pr-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="w-full pl-10 pr-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring text-sm"
                 />
               </div>
               
               <div className="relative">
-                <Calendar className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <select
                   name="carYear"
                   value={carInfo.carYear}
                   onChange={handleInputChange}
                   required
-                  className="w-full pl-10 pr-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="w-full pl-10 pr-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring text-sm"
                 >
                   <option value="">Select Year *</option>
                   {years.map(year => (
@@ -123,14 +123,14 @@ const CarInfoModal = ({ isOpen, onClose, bookingData, onBack, onNext }) => {
               </div>
               
               <div className="relative">
-                <Palette className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Palette className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <input
                   type="text"
                   name="carColor"
                   placeholder="Car Color (optional)"
                   value={carInfo.carColor}
                   onChange={handleInputChange}
-                  className="w-full pl-10 pr-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="w-full pl-10 pr-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring text-sm"
                 />
               </div>
               

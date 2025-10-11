@@ -623,18 +623,6 @@ const BookingModal = ({ isOpen, onClose }) => {
                     )}
                   </div>
                 </div>
-                
-                <div className="relative">
-                  <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <textarea
-                    name="message"
-                    placeholder="Additional message or special requests..."
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={2}
-                    className="w-full pl-10 pr-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring resize-none custom-scrollbar"
-                  />
-                </div>
               </div>
             </form>
           </div>
