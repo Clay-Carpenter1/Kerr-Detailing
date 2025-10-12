@@ -33,7 +33,7 @@ const Home = () => {
     },
     {
       id: 2,
-      before: '/paint-correction3.jpeg',
+      before: '/paint-correction3.webp',
       after: '/paint-correction4.png',
       title: 'Paint Correction',
       description: 'Restored paint clarity and shine'
