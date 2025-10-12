@@ -96,7 +96,7 @@ A modern, responsive web application for a mobile car detailing business built w
    ```
 
 5. **Add your background image**
-   Place `darkened_overlay_stronger.png` in the `public/` directory
+   Place `darkened_overlay_stronger.avif` in the `public/` directory
 
 6. **Start the development server**
    ```bash
@@ -188,7 +188,7 @@ Visit `/test-sms` in development to test the SMS functionality.
 
 ### **Branding**
 - Update colors in `tailwind.config.js`
-- Replace `darkened_overlay_stronger.png` with your own background
+- Replace `darkened_overlay_stronger.avif` with your own background
 - Modify service packages and pricing in components
 
 ### **Content**

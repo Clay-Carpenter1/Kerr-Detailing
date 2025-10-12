@@ -140,7 +140,7 @@ const ServicesPage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/darkened_overlay_stronger.png')`
+            backgroundImage: `url('/darkened_overlay_stronger.avif')`
           }}
         ></div>
         

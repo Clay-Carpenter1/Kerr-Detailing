@@ -81,7 +81,7 @@ This message was sent from the Kerr Detailing website contact form.
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/darkened_overlay_stronger.png')`
+            backgroundImage: `url('/darkened_overlay_stronger.avif')`
           }}
         ></div>
         
