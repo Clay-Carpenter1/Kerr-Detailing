@@ -12,7 +12,7 @@ const GalleryPage = () => {
   const galleryImages = [
     {
       id: 1,
-      src: '/gallery1.jpg',
+      src: '/gallery1.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -20,7 +20,7 @@ const GalleryPage = () => {
     },
     {
       id: 2,
-      src: '/gallery2.jpg',
+      src: '/gallery2.webp',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -28,7 +28,7 @@ const GalleryPage = () => {
     },
     {
       id: 3,
-      src: '/gallery3.jpg',
+      src: '/gallery3.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -44,7 +44,7 @@ const GalleryPage = () => {
     },
     {
       id: 5,
-      src: '/gallery4.jpg',
+      src: '/gallery4.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -52,7 +52,7 @@ const GalleryPage = () => {
     },
     {
       id: 6,
-      src: '/gallery5.jpg',
+      src: '/gallery5.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -68,7 +68,7 @@ const GalleryPage = () => {
     },
     {
       id: 8,
-      src: '/gallery6.jpg',
+      src: '/gallery6.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -76,7 +76,7 @@ const GalleryPage = () => {
     },
     {
       id: 9,
-      src: '/gallery7.jpg',
+      src: '/gallery7.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -84,7 +84,7 @@ const GalleryPage = () => {
     },
     {
       id: 10,
-      src: '/gallery8.JPG',
+      src: '/gallery8.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -92,7 +92,7 @@ const GalleryPage = () => {
     },
     {
       id: 11,
-      src: '/gallery9.JPG',
+      src: '/gallery9.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -109,7 +109,7 @@ const GalleryPage = () => {
     },
     {
       id: 13,
-      src: '/gallery10.jpg',
+      src: '/gallery10.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -117,7 +117,7 @@ const GalleryPage = () => {
     },
     {
       id: 14,
-      src: '/gallery11.jpg',
+      src: '/gallery11.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -125,7 +125,7 @@ const GalleryPage = () => {
     },
     {
       id: 15,
-      src: '/gallery12.jpg',
+      src: '/gallery12.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -133,7 +133,7 @@ const GalleryPage = () => {
     },
     {
       id: 16,
-      src: '/gallery13.jpg',
+      src: '/gallery13.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -141,7 +141,7 @@ const GalleryPage = () => {
     },
     {
       id: 17,
-      src: '/gallery14.jpg',
+      src: '/gallery14.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',
@@ -149,7 +149,7 @@ const GalleryPage = () => {
     },
     {
       id: 18,
-      src: '/gallery15.jpg',
+      src: '/gallery15.avif',
       alt: 'Professional car detailing work',
       category: 'Featured',
       title: 'Professional Detail Work',

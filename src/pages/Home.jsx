@@ -19,22 +19,22 @@ const Home = () => {
   const beforeAfterImages = [
     {
       id: 1,
-      before: '/gallery2.jpg',
-      after: '/gallery5.jpg',
+      before: '/gallery2.webp',
+      after: '/gallery5.avif',
       title: 'Full Detail Package',
       description: 'Complete exterior and interior restoration'
     },
     {
       id: 3,
-      before: '/gallery10.jpg',
-      after: '/gallery11.jpg',
+      before: '/gallery10.avif',
+      after: '/gallery11.avif',
       title: 'Interior Deep Clean',
       description: 'Professional interior restoration'
     },
     {
       id: 2,
       before: '/paint-correction3.webp',
-      after: '/paint-correction4.png',
+      after: '/paint-correction4.avif',
       title: 'Paint Correction',
       description: 'Restored paint clarity and shine'
     }
