@@ -10,6 +10,14 @@ export default async function handler(req, res) {
       return res.status(200).end();
     }
 
+    if (req.method === 'GET') {
+      // Stripe tests webhooks with GET requests
+      return res.status(200).json({ 
+        message: 'Webhook endpoint is active',
+        timestamp: new Date().toISOString()
+      });
+    }
+
     if (req.method !== 'POST') {
       return res.status(405).json({ error: 'Method not allowed' });
     }
