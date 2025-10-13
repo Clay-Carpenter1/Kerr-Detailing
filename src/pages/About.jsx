@@ -54,16 +54,13 @@ const About = () => {
               <h2 className="text-3xl font-bold mb-6 text-foreground">Our Story</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 2019, Kerr Detailing began as a passion project with a simple mission: 
-                  to provide exceptional car detailing services that exceed customer expectations.
+                  Founded in 2020, Kerr Detailing began in my parents’ driveway, where I started detailing cars for family and friends — always with one goal in mind: to make every vehicle look its best.
                 </p>
                 <p>
-                  What started as a small operation has grown into a trusted name in automotive care, 
-                  serving hundreds of satisfied customers throughout the region.
+                  What started as a one-person operation has grown into a small, dedicated team with the skills and equipment to offer professional mobile detailing.
                 </p>
                 <p>
-                  We believe that every vehicle deserves to look its best, and we're committed to 
-                  using only the finest products and techniques to achieve outstanding results.
+                  Today, we’re proud to bring high-quality detailing services directly to our customers, providing convenience, care, and exceptional results every time.
                 </p>
               </div>
             </motion.div>

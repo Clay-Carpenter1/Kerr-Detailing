@@ -493,7 +493,7 @@ const BookingModal = ({ isOpen, onClose }) => {
     <>
       {/* Step 1: Basic Info Modal */}
       <Dialog open={isOpen && !showServiceSelection && !showCarInfo} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-lg w-full max-w-[95vw] max-h-[95vh] overflow-hidden">
+        <DialogContent className="w-full max-w-[95vw] sm:max-w-md max-h-[90vh] overflow-hidden">
           <DialogHeader className="pb-4">
             <DialogTitle>Book Your Service - Step 1 of 3</DialogTitle>
             <DialogDescription>
@@ -501,7 +501,7 @@ const BookingModal = ({ isOpen, onClose }) => {
             </DialogDescription>
           </DialogHeader>
           
-          <div className="max-h-[60vh] overflow-y-auto custom-scrollbar pr-2">
+          <div className="max-h-[60vh] overflow-y-auto custom-scrollbar pr-1 px-1 sm:px-0">
             <form onSubmit={handleNext} className="space-y-4">
               {error && (
                 <div className="flex items-center space-x-2 text-destructive text-sm bg-destructive/10 p-3 rounded-md">
@@ -521,7 +521,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                     onChange={handleInputChange}
                     required
                     disabled={user && user.user_metadata?.full_name}
-                    className="w-full pl-10 pr-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
+                    className="w-full pl-10 pr-3 py-3 text-sm border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
                   />
                 </div>
                 
@@ -535,7 +535,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                     onChange={handleInputChange}
                     required
                     disabled={user && user.email}
-                    className="w-full pl-10 pr-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
+                    className="w-full pl-10 pr-3 py-3 text-sm border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
                   />
                 </div>
                 
@@ -548,7 +548,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-10 pr-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="w-full pl-10 pr-3 py-3 text-sm border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                   />
                 </div>
 
@@ -582,7 +582,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                       onChange={handleInputChange}
                       required
                       min={new Date().toISOString().split('T')[0]}
-                      className="w-full pl-10 pr-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="w-full pl-10 pr-3 py-3 text-sm border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                   </div>
                   
@@ -646,7 +646,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
       {/* Step 3: Service Selection Modal */}
       <Dialog open={isOpen && showServiceSelection && !showCarInfo && !showPayment} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-4xl w-full max-w-[95vw] max-h-[95vh] overflow-hidden">
+        <DialogContent className="w-full max-w-[95vw] sm:max-w-2xl max-h-[90vh] overflow-hidden">
           <DialogHeader className="pb-4">
             <DialogTitle>Book Your Service - Step 3 of 4</DialogTitle>
             <DialogDescription>
