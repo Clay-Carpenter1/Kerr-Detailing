@@ -371,9 +371,8 @@ const BookingModal = ({ isOpen, onClose }) => {
         addons: formData.addons ? JSON.stringify(formData.addons) : null,
         total_price: formData.totalPrice || 0,
         text_reminders: formData.textReminders,
-        // Temporarily comment out until database is updated
-        // payment_status: paymentResult.status,
-        // payment_method_id: paymentResult.paymentMethodId,
+        payment_status: paymentResult.status,
+        payment_method_id: paymentResult.paymentMethodId,
         status: 'confirmed' // Change to confirmed since payment is complete
       };
 
