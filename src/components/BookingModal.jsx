@@ -13,6 +13,7 @@ const BookingModal = ({ isOpen, onClose }) => {
   const { user } = useAuth();
   const [showCarInfo, setShowCarInfo] = useState(false);
   const [showServiceSelection, setShowServiceSelection] = useState(false);
+  const [showAddons, setShowAddons] = useState(false);
   const [showPayment, setShowPayment] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -56,6 +57,7 @@ const BookingModal = ({ isOpen, onClose }) => {
     if (!isOpen) {
       setShowCarInfo(false);
       setShowServiceSelection(false);
+      setShowAddons(false);
       setShowPayment(false);
       setError('');
       setSuccess(false);
@@ -284,7 +286,7 @@ const BookingModal = ({ isOpen, onClose }) => {
       return;
     }
     
-    setShowPayment(true);
+    setShowAddons(true);
     setShowServiceSelection(false);
   };
 
@@ -420,14 +422,25 @@ const BookingModal = ({ isOpen, onClose }) => {
     setShowCarInfo(true);
   };
 
+  const handleAddonsNext = () => {
+    setShowPayment(true);
+    setShowAddons(false);
+  };
+
+  const handleAddonsBack = () => {
+    setShowAddons(false);
+    setShowServiceSelection(true);
+  };
+
   const handlePaymentBack = () => {
     setShowPayment(false);
-    setShowServiceSelection(true);
+    setShowAddons(true);
   };
 
   const handleCarInfoClose = () => {
     setShowCarInfo(false);
     setShowServiceSelection(false);
+    setShowAddons(false);
     setShowPayment(false);
     onClose();
   };
@@ -492,10 +505,10 @@ const BookingModal = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Step 1: Basic Info Modal */}
-      <Dialog open={isOpen && !showServiceSelection && !showCarInfo} onOpenChange={onClose}>
+      <Dialog open={isOpen && !showServiceSelection && !showCarInfo && !showAddons && !showPayment} onOpenChange={onClose}>
         <DialogContent className="w-full max-w-[95vw] sm:max-w-md max-h-[90vh] overflow-hidden">
           <DialogHeader className="pb-4">
-            <DialogTitle>Book Your Service - Step 1 of 3</DialogTitle>
+            <DialogTitle>Book Your Service - Step 1 of 5</DialogTitle>
             <DialogDescription>
               Fill out your contact information and select your preferred time.
             </DialogDescription>
@@ -645,12 +658,12 @@ const BookingModal = ({ isOpen, onClose }) => {
       </Dialog>
 
       {/* Step 3: Service Selection Modal */}
-      <Dialog open={isOpen && showServiceSelection && !showCarInfo && !showPayment} onOpenChange={onClose}>
-        <DialogContent className="w-full max-w-[95vw] sm:max-w-2xl max-h-[90vh] flex flex-col">
+      <Dialog open={isOpen && showServiceSelection && !showCarInfo && !showAddons && !showPayment} onOpenChange={onClose}>
+        <DialogContent className="w-full max-w-[95vw] sm:max-w-md max-h-[90vh] flex flex-col">
           <DialogHeader className="pb-4 flex-shrink-0">
-            <DialogTitle>Book Your Service - Step 3 of 4</DialogTitle>
+            <DialogTitle>Book Your Service - Step 3 of 5</DialogTitle>
             <DialogDescription>
-              Choose your service package and add any extras you need.
+              Choose your service package.
             </DialogDescription>
           </DialogHeader>
           
@@ -712,65 +725,6 @@ const BookingModal = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              {/* Add-ons Section */}
-              {formData.service && (
-                <div>
-                  <h3 className="text-lg font-semibold mb-4">Add Extras (Optional)</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {addons.map((addon) => {
-                      const isSelected = formData.addons?.includes(addon.id);
-                      return (
-                        <div
-                          key={addon.id}
-                          className={`border rounded-lg p-3 cursor-pointer transition-all ${
-                            isSelected
-                              ? 'border-primary bg-primary/5 ring-1 ring-primary/20'
-                              : 'border-border hover:border-primary/50 hover:bg-muted/30'
-                          }`}
-                          onClick={() => handleAddonToggle(addon.id)}
-                        >
-                          <div className="flex items-center justify-between">
-                            <div className="flex-1">
-                              <div className="flex items-center space-x-2">
-                                <h4 className="font-medium">{addon.name}</h4>
-                                <span className="text-primary font-semibold">+${addon.price}</span>
-                              </div>
-                              <p className="text-sm text-muted-foreground mt-1">{addon.description}</p>
-                            </div>
-                            <div className="ml-3">
-                              {isSelected ? (
-                                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                                  <Minus className="h-4 w-4 text-primary-foreground" />
-                                </div>
-                              ) : (
-                                <div className="w-6 h-6 border-2 border-muted-foreground rounded-full flex items-center justify-center">
-                                  <Plus className="h-4 w-4 text-muted-foreground" />
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {/* Total Price Summary */}
-              {formData.service && (
-                <div className="border-t pt-4">
-                  <div className="flex justify-between items-center text-lg font-semibold">
-                    <span>Total Price:</span>
-                    <span className="text-primary">${formData.totalPrice}</span>
-                  </div>
-                  {formData.addons?.length > 0 && (
-                    <div className="text-sm text-muted-foreground mt-2">
-                      <div>Base package: ${servicePackages.find(p => p.id === formData.service)?.price}</div>
-                      <div>Add-ons: +${formData.totalPrice - (servicePackages.find(p => p.id === formData.service)?.price || 0)}</div>
-                    </div>
-                  )}
-                </div>
-              )}
             </div>
           </div>
           
@@ -785,7 +739,112 @@ const BookingModal = ({ isOpen, onClose }) => {
               onClick={handleServiceNext}
               disabled={!formData.service}
             >
-              {!formData.service ? 'Select a Package First' : 'Continue to Payment'}
+              {!formData.service ? 'Select a Package First' : 'Next: Add Extras'}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Step 4: Add-ons Modal */}
+      <Dialog open={isOpen && showAddons && !showCarInfo && !showServiceSelection && !showPayment} onOpenChange={onClose}>
+        <DialogContent className="w-full max-w-[95vw] sm:max-w-md max-h-[90vh] flex flex-col">
+          <DialogHeader className="pb-4 flex-shrink-0">
+            <DialogTitle>Book Your Service - Step 4 of 5</DialogTitle>
+            <DialogDescription>
+              Add any extras you'd like (optional).
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-0">
+            {error && (
+              <div className="flex items-center space-x-2 text-destructive text-sm bg-destructive/10 p-3 rounded-md mb-4">
+                <AlertCircle className="h-4 w-4 flex-shrink-0" />
+                <span>{error}</span>
+              </div>
+            )}
+
+            {/* Selected Package Summary */}
+            {formData.service && (
+              <div className="bg-muted/30 rounded-lg p-4 mb-6">
+                <h3 className="font-semibold mb-2">Selected Package</h3>
+                <div className="flex justify-between items-center">
+                  <span>{servicePackages.find(p => p.id === formData.service)?.name}</span>
+                  <span className="font-semibold">${servicePackages.find(p => p.id === formData.service)?.price}</span>
+                </div>
+              </div>
+            )}
+
+            {/* Add-ons Section */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Add Extras (Optional)</h3>
+                <div className="space-y-3">
+                  {addons.map((addon) => {
+                    const isSelected = formData.addons?.includes(addon.id);
+                    return (
+                      <div
+                        key={addon.id}
+                        className={`border rounded-lg p-3 cursor-pointer transition-all ${
+                          isSelected
+                            ? 'border-primary bg-primary/5 ring-1 ring-primary/20'
+                            : 'border-border hover:border-primary/50 hover:bg-muted/30'
+                        }`}
+                        onClick={() => handleAddonToggle(addon.id)}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-2">
+                              <h4 className="font-medium">{addon.name}</h4>
+                              <span className="text-primary font-semibold">+${addon.price}</span>
+                            </div>
+                            <p className="text-sm text-muted-foreground mt-1">{addon.description}</p>
+                          </div>
+                          <div className="ml-3">
+                            {isSelected ? (
+                              <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                <Minus className="h-4 w-4 text-primary-foreground" />
+                              </div>
+                            ) : (
+                              <div className="w-6 h-6 border-2 border-muted-foreground rounded-full flex items-center justify-center">
+                                <Plus className="h-4 w-4 text-muted-foreground" />
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Total Price Summary */}
+              <div className="border-t pt-4">
+                <div className="flex justify-between items-center text-lg font-semibold">
+                  <span>Total Price:</span>
+                  <span className="text-primary">${formData.totalPrice}</span>
+                </div>
+                {formData.addons?.length > 0 && (
+                  <div className="text-sm text-muted-foreground mt-2">
+                    <div>Base package: ${servicePackages.find(p => p.id === formData.service)?.price}</div>
+                    <div>Add-ons: +${formData.totalPrice - (servicePackages.find(p => p.id === formData.service)?.price || 0)}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+          
+          <DialogFooter className="gap-2 pt-4 border-t flex-shrink-0 mt-4">
+            <Button type="button" variant="outline" onClick={handleAddonsBack}>
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Packages
+            </Button>
+            <Button 
+              type="button" 
+              className="flex items-center bg-primary hover:bg-primary/90 text-primary-foreground" 
+              onClick={handleAddonsNext}
+            >
+              Continue to Payment
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </DialogFooter>
@@ -794,7 +853,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
       {/* Step 2: Car Info Modal */}
       <CarInfoModal
-        isOpen={showCarInfo && !showServiceSelection && !showPayment}
+        isOpen={showCarInfo && !showServiceSelection && !showAddons && !showPayment}
         onClose={handleCarInfoClose}
         onBack={handleCarInfoBack}
         onNext={handleCarInfoNext}

@@ -61,7 +61,7 @@ const CarInfoModal = ({ isOpen, onClose, bookingData, onBack, onNext }) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="w-full max-w-[95vw] sm:max-w-md max-h-[90vh] overflow-hidden">
         <DialogHeader className="pb-4">
-          <DialogTitle>Vehicle Information - Step 2 of 3</DialogTitle>
+            <DialogTitle>Vehicle Information - Step 2 of 5</DialogTitle>
           <DialogDescription>
             Tell us about your vehicle so we can provide the best service.
           </DialogDescription>

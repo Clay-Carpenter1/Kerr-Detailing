@@ -163,7 +163,7 @@ const PaymentModal = ({ isOpen, onClose, onBack, onSuccess, bookingData }) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="w-full max-w-[95vw] sm:max-w-md max-h-[90vh] overflow-hidden">
         <DialogHeader className="pb-4">
-          <DialogTitle>Payment - Step 4 of 4</DialogTitle>
+          <DialogTitle>Payment - Step 5 of 5</DialogTitle>
           <DialogDescription>
             Complete your booking by providing payment information.
           </DialogDescription>
