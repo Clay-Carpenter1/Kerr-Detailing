@@ -131,7 +131,7 @@ const BookingModal = ({ isOpen, onClose }) => {
       id: 'premium',
       name: 'Premium Package',
       price: 149,
-      description: 'Our most popular package',
+      description: 'Complete interior and exterior transformation with professional-grade products and techniques',
       features: [
         'Foam Wash & Hand Wash',
         'Wheel Decontamination',
@@ -150,7 +150,7 @@ const BookingModal = ({ isOpen, onClose }) => {
       id: 'diamond',
       name: 'Diamond Package',
       price: 199,
-      description: 'The ultimate detailing experience',
+      description: 'Our most comprehensive service including engine bay cleaning and headlight restoration',
       features: [
         'Foam Wash & Hand Wash',
         'Wheel Decontamination',
