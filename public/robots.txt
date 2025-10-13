@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kerr-detailing.vercel.app/sitemap.xml
+
+# Disallow admin or sensitive areas (if any)
+Disallow: /api/
+Disallow: /admin/
