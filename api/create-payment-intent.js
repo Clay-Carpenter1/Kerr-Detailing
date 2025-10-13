@@ -1,6 +1,6 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-
 export default async function handler(req, res) {
+  // Initialize Stripe only if we have the secret key
+  const stripe = process.env.STRIPE_SECRET_KEY ? require('stripe')(process.env.STRIPE_SECRET_KEY) : null;
   // Add CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -16,7 +16,15 @@ export default async function handler(req, res) {
   }
 
   try {
+    if (!stripe) {
+      return res.status(500).json({ error: 'Stripe not configured' });
+    }
+
     const { amount, currency = 'usd', metadata = {} } = req.body;
+
+    if (!amount || amount <= 0) {
+      return res.status(400).json({ error: 'Invalid amount' });
+    }
 
     // Create a PaymentIntent with the order amount and currency
     const paymentIntent = await stripe.paymentIntents.create({
@@ -34,6 +42,9 @@ export default async function handler(req, res) {
     });
   } catch (error) {
     console.error('Error creating payment intent:', error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ 
+      error: error.message || 'Payment intent creation failed',
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 }
