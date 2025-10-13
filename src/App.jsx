@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Bookings from './pages/Bookings';
 import Gallery from './pages/Gallery';
 import TestSMS from './pages/TestSMS';
+import StripeMonitor from './pages/StripeMonitor';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/bookings" element={<Bookings />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/test-sms" element={<TestSMS />} />
+            <Route path="/stripe-monitor" element={<StripeMonitor />} />
             </Routes>
           </main>
           <Footer />
