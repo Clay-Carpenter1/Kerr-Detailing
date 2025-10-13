@@ -66,10 +66,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signInWithGoogle = async () => {
+    // Use production URL if in production, otherwise use current origin
+    const redirectUrl = window.location.hostname === 'localhost' 
+      ? `${window.location.origin}/`
+      : 'https://kerr-detailing.vercel.app/';
+      
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}/`
+        redirectTo: redirectUrl
       }
     });
     return { data, error };
