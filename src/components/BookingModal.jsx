@@ -600,21 +600,21 @@ const BookingModal = ({ isOpen, onClose }) => {
                   </div>
                   
                   {/* Time Slot Selection */}
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Select Time *
-                      {loadingTimes && <span className="text-muted-foreground ml-2">(Checking availability...)</span>}
-                    </label>
-                    
-                    {formData.date ? (
-                      <div className="grid grid-cols-1 gap-2 max-h-48 overflow-y-auto custom-scrollbar p-1">
+                  {formData.date && (
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-3">
+                        Select Time *
+                        {loadingTimes && <span className="text-muted-foreground ml-2">(Checking availability...)</span>}
+                      </label>
+                      
+                      <div className="grid grid-cols-2 gap-2">
                         {timeSlots.map((slot) => (
                           <button
                             key={slot.value}
                             type="button"
                             onClick={() => slot.available && setFormData(prev => ({ ...prev, time: slot.value }))}
                             disabled={!slot.available || loadingTimes}
-                            className={`p-3 text-sm rounded-md border transition-colors flex items-center justify-between ${
+                            className={`p-3 text-sm rounded-md border transition-colors flex items-center justify-center ${
                               formData.time === slot.value
                                 ? 'bg-primary text-primary-foreground border-primary'
                                 : slot.available
@@ -624,17 +624,30 @@ const BookingModal = ({ isOpen, onClose }) => {
                           >
                             <span>{slot.label}</span>
                             {!slot.available && (
-                              <X className="h-4 w-4" />
+                              <X className="h-4 w-4 ml-2" />
                             )}
                           </button>
                         ))}
                       </div>
-                    ) : (
-                      <p className="text-sm text-muted-foreground p-2 border border-dashed border-muted rounded-md">
+                      
+                      {timeSlots.length === 0 && !loadingTimes && (
+                        <p className="text-sm text-muted-foreground p-3 border border-dashed border-muted rounded-md text-center">
+                          No available times for this date
+                        </p>
+                      )}
+                    </div>
+                  )}
+                  
+                  {!formData.date && (
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Select Time *
+                      </label>
+                      <p className="text-sm text-muted-foreground p-3 border border-dashed border-muted rounded-md text-center">
                         Please select a date first to see available times
                       </p>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </form>
