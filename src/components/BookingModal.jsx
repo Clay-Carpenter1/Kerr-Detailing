@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from './ui/dialog';
 import { Button } from './ui/button';
-import { Calendar, Clock, User, Mail, Phone, MessageSquare, AlertCircle, ArrowRight, X, Check, Plus, Minus, CheckCircle } from 'lucide-react';
+import { Calendar, Clock, User, Mail, Phone, MessageSquare, AlertCircle, ArrowRight, ArrowLeft, X, Check, Plus, Minus, CheckCircle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { getAvailableTimeSlots } from '../lib/bookingUtils';
 import { supabase } from '../lib/supabase';
@@ -646,15 +646,15 @@ const BookingModal = ({ isOpen, onClose }) => {
 
       {/* Step 3: Service Selection Modal */}
       <Dialog open={isOpen && showServiceSelection && !showCarInfo && !showPayment} onOpenChange={onClose}>
-        <DialogContent className="w-full max-w-[95vw] sm:max-w-2xl max-h-[90vh] overflow-hidden">
-          <DialogHeader className="pb-4">
+        <DialogContent className="w-full max-w-[95vw] sm:max-w-2xl max-h-[90vh] flex flex-col">
+          <DialogHeader className="pb-4 flex-shrink-0">
             <DialogTitle>Book Your Service - Step 3 of 4</DialogTitle>
             <DialogDescription>
               Choose your service package and add any extras you need.
             </DialogDescription>
           </DialogHeader>
           
-          <div className="max-h-[70vh] overflow-y-auto custom-scrollbar pr-2">
+          <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-0">
             {error && (
               <div className="flex items-center space-x-2 text-destructive text-sm bg-destructive/10 p-3 rounded-md mb-4">
                 <AlertCircle className="h-4 w-4 flex-shrink-0" />
@@ -774,17 +774,18 @@ const BookingModal = ({ isOpen, onClose }) => {
             </div>
           </div>
           
-          <DialogFooter className="gap-2 pt-4 border-t">
+          <DialogFooter className="gap-2 pt-4 border-t flex-shrink-0 mt-4">
             <Button type="button" variant="outline" onClick={handleServiceBack}>
-              Back
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Vehicle Info
             </Button>
             <Button 
               type="button" 
-              className="flex items-center" 
+              className="flex items-center bg-primary hover:bg-primary/90 text-primary-foreground" 
               onClick={handleServiceNext}
               disabled={!formData.service}
             >
-              Next: Payment
+              {!formData.service ? 'Select a Package First' : 'Continue to Payment'}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </DialogFooter>
