@@ -679,7 +679,7 @@ const BookingModal = ({ isOpen, onClose }) => {
             <div className="space-y-6">
               <div>
                 <h3 className="text-lg font-semibold mb-4">Select Your Package</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="space-y-4">
                   {servicePackages.map((pkg) => (
                     <div
                       key={pkg.id}
@@ -691,21 +691,23 @@ const BookingModal = ({ isOpen, onClose }) => {
                       onClick={() => handleServiceSelect(pkg.id)}
                     >
                       {pkg.popular && (
-                        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                        <div className="absolute top-2 left-2">
                           <div className="bg-primary text-primary-foreground px-2 py-1 rounded-full text-xs font-semibold">
-                            Most Popular
+                            Popular
                           </div>
                         </div>
                       )}
                       
-                      <div className="text-center">
-                        <h4 className="text-lg font-semibold mb-1">{pkg.name}</h4>
-                        <div className="text-2xl font-bold text-primary mb-2">${pkg.price}</div>
+                      <div className={`${pkg.popular ? 'mt-8' : ''}`}>
+                        <div className="flex justify-between items-start mb-2">
+                          <h4 className="text-lg font-semibold">{pkg.name}</h4>
+                          <div className="text-xl font-bold text-primary">${pkg.price}</div>
+                        </div>
                         <p className="text-sm text-muted-foreground mb-3">{pkg.description}</p>
                         
                         <ul className="space-y-1 text-left">
                           {pkg.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm">
+                            <li key={idx} className="flex items-center text-xs">
                               <Check className="h-3 w-3 text-primary mr-2 flex-shrink-0" />
                               {feature}
                             </li>
