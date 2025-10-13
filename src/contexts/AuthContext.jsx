@@ -66,9 +66,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signInWithGoogle = async () => {
-    // Force production redirect when on Vercel
-    const redirectUrl = window.location.hostname.includes('vercel.app') 
-      ? 'https://kerr-detailing.vercel.app/'
+    // Force production redirect when on custom domain or Vercel
+    const redirectUrl = (window.location.hostname.includes('vercel.app') || window.location.hostname === 'kerr-detailing.com')
+      ? 'https://kerr-detailing.com/'
       : `${window.location.origin}/`;
       
     const { data, error } = await supabase.auth.signInWithOAuth({
