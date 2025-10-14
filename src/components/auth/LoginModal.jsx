@@ -88,7 +88,7 @@ const LoginModal = ({ isOpen, onClose }) => {
           <DialogTitle>{isLogin ? 'Sign In' : 'Create Account'}</DialogTitle>
           <DialogDescription>
             {isLogin 
-              ? 'Welcome back! Please sign in to your account.'
+              ? 'Welcome back! Please sign into your account.'
               : 'Create a new account to book services and track your appointments.'
             }
           </DialogDescription>
