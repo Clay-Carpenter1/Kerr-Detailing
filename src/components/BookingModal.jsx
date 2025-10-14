@@ -171,6 +171,57 @@ const BookingModal = ({ isOpen, onClose }) => {
     }
   ];
 
+  const individualServices = [
+    {
+      id: 'exterior_detail',
+      name: 'Exterior Detail',
+      price: 75,
+      description: 'Complete exterior washing, clay bar treatment, polishing, and waxing for a showroom finish',
+      features: [
+        'Paint Decontamination',
+        'Clay Bar Treatment',
+        'Machine Polishing',
+        'Premium Wax Application'
+      ]
+    },
+    {
+      id: 'interior_clean',
+      name: 'Interior Clean',
+      price: 65,
+      description: 'Deep cleaning of all interior surfaces including leather conditioning and fabric protection',
+      features: [
+        'Vacuum & Steam Clean',
+        'Leather Conditioning',
+        'Dashboard Treatment',
+        'Odor Elimination'
+      ]
+    },
+    {
+      id: 'paint_correction',
+      name: 'Paint Correction',
+      price: 200,
+      description: 'Professional paint correction to remove swirl marks, scratches, and restore paint clarity',
+      features: [
+        'Swirl Mark Removal',
+        'Scratch Correction',
+        'Paint Enhancement',
+        'Clear Coat Restoration'
+      ]
+    },
+    {
+      id: 'ceramic_coating',
+      name: 'Ceramic Coating',
+      price: 400,
+      description: 'Long-lasting protection with ceramic coating technology for ultimate paint protection',
+      features: [
+        '9H Hardness Protection',
+        'Hydrophobic Properties',
+        '2-5 Year Warranty',
+        'UV Protection'
+      ]
+    }
+  ];
+
   const addons = [
     {
       id: 'engine_bay',
@@ -220,7 +271,8 @@ const BookingModal = ({ isOpen, onClose }) => {
   };
 
   const handleServiceSelect = (serviceId) => {
-    const selectedService = servicePackages.find(pkg => pkg.id === serviceId);
+    const selectedService = servicePackages.find(pkg => pkg.id === serviceId) || 
+                           individualServices.find(svc => svc.id === serviceId);
     setFormData(prev => ({
       ...prev,
       service: serviceId,
@@ -675,7 +727,7 @@ const BookingModal = ({ isOpen, onClose }) => {
           <DialogHeader className="pb-4 flex-shrink-0">
             <DialogTitle>Book Your Service - Step 3 of 5</DialogTitle>
             <DialogDescription>
-              Choose your service package.
+              Choose a service package or individual service.
             </DialogDescription>
           </DialogHeader>
           
@@ -690,7 +742,7 @@ const BookingModal = ({ isOpen, onClose }) => {
             {/* Service Packages */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-4">Select Your Package</h3>
+                <h3 className="text-lg font-semibold mb-4">Service Packages</h3>
                 <div className="space-y-4">
                   {servicePackages.map((pkg) => (
                     <div
@@ -728,6 +780,49 @@ const BookingModal = ({ isOpen, onClose }) => {
                       </div>
                       
                       {formData.service === pkg.id && (
+                        <div className="absolute top-2 right-2">
+                          <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                            <Check className="h-4 w-4 text-primary-foreground" />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Individual Services */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Individual Services</h3>
+                <div className="space-y-4">
+                  {individualServices.map((service) => (
+                    <div
+                      key={service.id}
+                      className={`relative border rounded-lg p-4 cursor-pointer transition-all ${
+                        formData.service === service.id
+                          ? 'border-primary bg-primary/5 ring-2 ring-primary/20'
+                          : 'border-border hover:border-primary/50 hover:bg-muted/30'
+                      }`}
+                      onClick={() => handleServiceSelect(service.id)}
+                    >
+                      <div>
+                        <div className="flex justify-between items-start mb-2">
+                          <h4 className="text-lg font-semibold">{service.name}</h4>
+                          <div className="text-xl font-bold text-primary">Starting at ${service.price}</div>
+                        </div>
+                        <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
+                        
+                        <ul className="space-y-1 text-left">
+                          {service.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-xs">
+                              <Check className="h-3 w-3 text-primary mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      {formData.service === service.id && (
                         <div className="absolute top-2 right-2">
                           <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
                             <Check className="h-4 w-4 text-primary-foreground" />
