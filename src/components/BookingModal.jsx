@@ -503,7 +503,7 @@ const BookingModal = ({ isOpen, onClose }) => {
           <DialogHeader>
             <DialogTitle>Sign In Required</DialogTitle>
             <DialogDescription>
-              Please sign in to book a service.
+              Please sign into book a service.
             </DialogDescription>
           </DialogHeader>
           <div className="text-center py-6">
