@@ -9,7 +9,8 @@ export default async function handler(req, res) {
   let stripe = null;
   try {
     if (process.env.STRIPE_SECRET_KEY) {
-      stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+      const Stripe = (await import('stripe')).default;
+      stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     }
   } catch (error) {
     console.error('Stripe initialization error:', error);
