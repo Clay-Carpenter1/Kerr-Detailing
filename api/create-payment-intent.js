@@ -1,6 +1,20 @@
 export default async function handler(req, res) {
+  console.log('Payment intent API called');
+  console.log('Environment check:', {
+    hasStripeKey: !!process.env.STRIPE_SECRET_KEY,
+    keyPrefix: process.env.STRIPE_SECRET_KEY?.substring(0, 7)
+  });
+  
   // Initialize Stripe only if we have the secret key
-  const stripe = process.env.STRIPE_SECRET_KEY ? require('stripe')(process.env.STRIPE_SECRET_KEY) : null;
+  let stripe = null;
+  try {
+    if (process.env.STRIPE_SECRET_KEY) {
+      stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+    }
+  } catch (error) {
+    console.error('Stripe initialization error:', error);
+    return res.status(500).json({ error: 'Stripe initialization failed', details: error.message });
+  }
   // Add CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
