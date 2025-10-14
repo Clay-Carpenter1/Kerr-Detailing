@@ -173,7 +173,7 @@ const BookingModal = ({ isOpen, onClose }) => {
 
   const individualServices = [
     {
-      id: 'exterior_detail',
+      id: 'Exterior Detail',
       name: 'Exterior Detail',
       price: 75,
       description: 'Complete exterior washing, clay bar treatment, polishing, and waxing for a showroom finish',
@@ -185,7 +185,7 @@ const BookingModal = ({ isOpen, onClose }) => {
       ]
     },
     {
-      id: 'interior_clean',
+      id: 'Interior Clean',
       name: 'Interior Clean',
       price: 65,
       description: 'Deep cleaning of all interior surfaces including leather conditioning and fabric protection',
@@ -197,7 +197,7 @@ const BookingModal = ({ isOpen, onClose }) => {
       ]
     },
     {
-      id: 'paint_correction',
+      id: 'Paint Correction',
       name: 'Paint Correction',
       price: 200,
       description: 'Professional paint correction to remove swirl marks, scratches, and restore paint clarity',
@@ -209,7 +209,7 @@ const BookingModal = ({ isOpen, onClose }) => {
       ]
     },
     {
-      id: 'ceramic_coating',
+      id: 'Ceramic Coating',
       name: 'Ceramic Coating',
       price: 400,
       description: 'Long-lasting protection with ceramic coating technology for ultimate paint protection',
